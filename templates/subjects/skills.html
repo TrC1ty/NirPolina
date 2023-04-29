@@ -1,0 +1,34 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Skills{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="mt-4 my-3 p-3 bg-body rounded shadow-sm">
+          <div class="row">
+            <div class="col-12">
+                <table class="table">
+                    <thead>
+                        <th scope="col">Код</th>
+                        <th scope="col">Название</th>
+                        <th scope="col">Знать</th>
+                        <th scope="col">Уметь</th>
+                        <th scope="col">Владеть</th>
+                    </thead>
+                    <tbody>
+                        {% for skill in skills %}
+                            <tr>
+                                <td>{{ skill.code }}</td>
+                                <td>{{ skill.name }}</td>
+                                <td>{{ skill.indicatorKnow }}</td>
+                                <td>{{ skill.indicatorCan }}</td>
+                                <td>{{ skill.indicatorOwn }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+          </div>
+        </div>
+    </div>
+{% endblock %}
